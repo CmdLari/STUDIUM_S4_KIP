@@ -65,4 +65,5 @@ public class Node {
     public boolean isLeaf() {
         return children==null;
     }
+
 }

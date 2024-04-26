@@ -58,7 +58,26 @@ public class Game {
 
 
     public int play() {
+        printTree();
         return Finder.choseBox(root);
     }
+
+    public void printTree() {
+        System.out.println("root");
+        int houseCounter=1;
+        for (Node house : houses) {
+            System.out.println("----house" + houseCounter+ " :");
+            houseCounter++;
+            int roomCounter=1;
+            for (Node room : house.getChildren()) {
+                System.out.println("-----------room" + roomCounter+ " :");
+                for (Node box : room.getChildren()) {
+                    System.out.println(STR."----------------[\{box.getValue()}]");
+                }
+                roomCounter++;
+            }
+        }
+    }
+
 
 }
