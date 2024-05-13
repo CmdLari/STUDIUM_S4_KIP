@@ -1,3 +1,5 @@
+package praktikum1;
+
 public class Finder {
 
 
@@ -16,7 +18,7 @@ public class Finder {
     }
 
     private static int choseMax(Node node, int alpha, int beta){
-        //vorzeitiger Abbruch da Node=Leaf
+        //vorzeitiger Abbruch da praktikum1.Node=Leaf
         if (node.isLeaf()) return node.getValue();
         for(Node child : node.getChildren()){
             alpha = Math.max(alpha, choseMin(child,alpha,beta));

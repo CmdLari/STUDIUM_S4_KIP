@@ -1,3 +1,5 @@
+package praktikum1;
+
 public class Client {
 
     private static int BOX_NUMBERS = 20;
