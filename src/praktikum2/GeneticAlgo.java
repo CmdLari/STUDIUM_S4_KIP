@@ -83,10 +83,16 @@ public class GeneticAlgo {
     private void mutate(SolarPanel solarPanel) {
         Random rnd = new Random();
         if (mutationRate > rnd.nextFloat()) {
-            int newxRand = solarPanel.getPosition().getxValue() + rnd.nextInt(3);
-            int newYRand = solarPanel.getPosition().getyValue() + rnd.nextInt(3);
-            int newXValue = newxRand > xMaxValue ? 0 : newxRand;
+            int newxRand = solarPanel.getPosition().getxValue() + rnd.nextInt(6)-3;
+            int newYRand = solarPanel.getPosition().getyValue() + rnd.nextInt(6)-3;
+            int newXValue = newxRand > xMaxValue  ? 0 : newxRand;
+            if (newXValue<0){
+                newXValue = xMaxValue;
+            }
             int newYValue = newYRand > yMaxValue ? 0 : newYRand;
+            if (newYValue<0){
+                newYValue = yMaxValue;
+            }
             Positon newPos = new Positon(newXValue, newYValue);
             solarPanel.setPosition(newPos);
         }
